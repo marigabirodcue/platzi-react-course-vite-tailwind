@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 const OrderCard = props => {
 
-  //  const { title, imageUrl, price } = props
-
     const { title, imageUrl, price } = props
 
     OrderCard.propTypes = {
