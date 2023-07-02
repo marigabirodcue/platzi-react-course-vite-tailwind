@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 const OrderCard = props => {
 
-    const { title, imageUrl, price } = props
+    const { id, title, imageUrl, price, handleDelete } = props
 
     OrderCard.propTypes = {
+        id: PropTypes.node.isRequired,
         title: PropTypes.node.isRequired,
         imageUrl: PropTypes.node.isRequired,
         price: PropTypes.node.isRequired,
+        handleDelete: PropTypes.node.isRequired,
     }
 
     return (
@@ -21,7 +23,7 @@ const OrderCard = props => {
             </div>
             <div className='flex items-center gap-2'>
                 <p className='text-lg font-medium'>{price}</p>
-                <XMarkIcon className='h-6 w-6 text-black cursor-pointer'></XMarkIcon>
+                <XMarkIcon onClick={() => handleDelete(id)} className='h-6 w-6 text-black cursor-pointer'></XMarkIcon>
             </div>
         </div>
     )
