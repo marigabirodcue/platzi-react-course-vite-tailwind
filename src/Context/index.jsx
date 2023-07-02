@@ -26,7 +26,7 @@ export const ShoppingCartProvider = ({ children }) => {
         children: PropTypes.node.isRequired,
     }
 
-    // Shopping Cart · Increment quantity
+     // Shopping Cart · Increment quantity
     const [count, setCount] = useState(0)
 
     // Product Detail · Open/Close
@@ -45,6 +45,9 @@ export const ShoppingCartProvider = ({ children }) => {
     // Shopping Cart · Add products to cart
     const [cartProducts, setCartProducts] = useState([])
 
+    // Shopping Cart · Order
+    const [order, setOrder] = useState([])
+
     return (
         <ShoppingCartContext.Provider value={{
             count,
@@ -58,7 +61,9 @@ export const ShoppingCartProvider = ({ children }) => {
             setCartProducts,
             isCheckoutSideMenuOpen,
             openCheckoutSideMenu,
-            closeCheckoutSideMenu
+            closeCheckoutSideMenu,
+            order,
+            setOrder
         }}>
             {children}
         </ShoppingCartContext.Provider>
